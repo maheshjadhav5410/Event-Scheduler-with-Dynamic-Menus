@@ -30,7 +30,7 @@ A Django-based web application that allows users to schedule events (like partie
 ## 📂 Project Structure
 event_scheduler/
 │
-├── event_app/
+├── btrpy/
 │ ├── models.py # Event and Menu models
 │ ├── views.py # Logic to handle event creation and menu selection
 │ ├── forms.py # Django forms for scheduling
@@ -68,7 +68,7 @@ event_scheduler/
 
 ```bash
 git clone https://github.com/your-username/event-scheduler.git
-cd event-scheduler
+cd btrpy
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
