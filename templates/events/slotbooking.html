@@ -1,0 +1,13 @@
+   {% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Start Booking</h1>
+        <a href="{% url 'indoorimage' %}" class="btn btn-info">Preview Indoor Images</a>
+        <a href="{% url 'outdoorimage' %}" class="btn btn-info">Preview Outdoor Images</a>
+    </div>
+</div>
+
+{% endblock %}

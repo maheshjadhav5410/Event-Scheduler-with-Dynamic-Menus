@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>{{ event.name }} Description</h1>
+        <h6>{{ event.description }}</h6>
+        <p>Basic package: {{ event.price }}</p>
+        <p><sub>*(for 50 persons including food)</sub></p>
+        <a href="#" class="btn btn-primary">Enquiry</a>
+        <a href="{% url 'slotbooking' %}" class="btn btn-primary">BookSlot-></a>
+    </div>
+</div>
+
+{% endblock %}

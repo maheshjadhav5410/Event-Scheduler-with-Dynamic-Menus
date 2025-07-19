@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>{{event.name }}Outdoor images</h1>
+        <h2>Basic packages</h2>
+        <p>{{ outdoor.outdoorimg }}</p>
+        <div class="row">
+            {% for im in outdoor %}
+                <div class="col-md-4">
+                    <div class="card card-body">
+                        {% if im.outdoorimg %}
+                        <a href="#"><img src="{{ im.outdoorimg.url }}" alt="no outdoor image" width="300px" height="350px"></a>
+                        {% endif %}
+                        <a href="#">{{ im.event_name }}</a>
+                        <a href="{% url 'booking' %}"><button class="btn btn-success">Start Booking</button></a>
+                    </div>
+                </div>
+            {% endfor%}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

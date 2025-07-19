@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+    <h2 class="text-success mb-4" style="font-size: 32px;">🎉 Booking Successful!</h2>
+    
+    {% if booking %}
+        <p style="font-size: 20px;"><strong>Event:</strong> {{ booking.event }}</p>
+        <p style="font-size: 20px;"><strong>Type:</strong> {{ booking.event_type }}</p>
+        <p style="font-size: 20px;"><strong>Date:</strong> {{ booking.date }}</p>
+        <p style="font-size: 20px;"><strong>Time Slot:</strong> {{ booking.time_slot }}</p>
+        <p style="font-size: 20px;"><strong>Total Persons:</strong> {{ booking.total_person }}</p>
+    {% else %}
+        <p style="font-size: 20px;">Booking details not found.</p>
+    {% endif %}
+
+    <!-- Yes / No Buttons -->
+    <div class="mt-4">
+        <p style="font-size: 22px;">Do you want to Book Catering Services?</p>
+        <a href="{% url 'menu' %}" class="btn btn-primary btn-lg mx-3" style="font-size: 25px;" >Yes</a>
+        <a href="#" class="btn btn-info btn-lg mx-3" style="font-size: 25px;" padding: 14px 32px;" >No</a>
+    </div>
+</div>
+{% endblock %}
+

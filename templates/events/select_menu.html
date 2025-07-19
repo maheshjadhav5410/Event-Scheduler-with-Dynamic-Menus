@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center">🍽️ Choose Your Menu</h2>
+
+    <!-- Veg Section -->
+    <div class="border p-3 mt-4 rounded bg-light">
+        <h4 class="text-success">Veg Menu - ₹150 per plate</h4>
+        <ul>
+            {% for item in veg_items %}
+                <li>{{ item.name }}</li>
+            {% endfor %}
+        </ul>
+        <form method="post" action="{% url 'confirmation' %}">
+            {% csrf_token %}
+            <input type="hidden" name="menu" value="veg">
+            <button type="submit" class="btn btn-success">Confirm Veg Menu</button>
+        </form>
+    </div>
+
+    <!-- Non-Veg Section -->
+    <div class="border p-3 mt-4 rounded bg-light">
+        <h4 class="text-danger">Non-Veg Menu - ₹200 per plate</h4>
+        <ul>
+            {% for item in nonveg_items %}
+                <li>{{ item.name }}</li>
+            {% endfor %}
+        </ul>
+        <form method="post" action="{% url 'confirmation' %}">
+            {% csrf_token %}
+            <input type="hidden" name="menu" value="nonveg">
+            <button type="submit" class="btn btn-danger">Confirm Non-Veg Menu</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

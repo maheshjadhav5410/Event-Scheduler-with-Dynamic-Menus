@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div class="card shadow-lg p-4" style="width: 100%; max-width: 500px; border-radius: 20px;">
+        <div class="card-body text-center">
+            <h2 class="text-success mb-4">✅ Booking Confirmation</h2>
+            <hr>
+            <p><strong>🎉 Event:</strong> {{ booking.event.name }}</p>
+            <p><strong>👥 Total Persons:</strong> {{ booking.total_persons }}</p>
+            <p><strong>🍽️ Selected Menu:</strong> {{ selected_menu|title }}</p>
+            <p><strong>💰 Menu Price:</strong> ₹{{ menu_price }}</p>
+            <p><strong>🏷️ Event Price:</strong> ₹{{ event_price }}</p>
+            <h4 class="mt-4"><strong>🧾 Total Price:</strong> ₹{{ total_price }}</h4>
+        </div>
+    </div>
+</div>
+{% endblock %}

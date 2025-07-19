@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>{{ event.name}}'s Indoor images</h1>
+        <p>Basic package: {{ event.price }}</p>
+        <p>{{ indoor.indoorimg}} </p>
+        <div class="row">
+            {% for i in indoor %}
+            <div class="col-md-4">
+                <div class="card card-body" style="border-radius: 10%;">
+                    {% if i.indoorimg %}
+                        <a href="{% url 'booking' %}"><img src="{{ i.indoorimg.url }}" alt="no img" height="350px" width="300px" style="border-radius: 5%;"></a>
+                    {% endif %}
+                        <h4><a href="#" style="text-decoration: none;">{{ i.eventName }}</a></h4>
+                        <a href="#"><button class="btn btn-success">Start Booking</button></a>
+
+                </div>
+                <br>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}      
